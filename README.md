@@ -101,6 +101,15 @@ Baseline and recovery can make real provider calls and incur your normal costs.
 Keep secrets in your app, outside the experiment config. The CLI prints paths
 to the generated reports; use separate output directories to retain each run.
 
+## Validation status
+
+A pinned Chatbot UI Lite chat handler produced the same `200 → 500 → 200`
+result with a direct fetch mock and with this proxy. The proxy required more
+integration wiring. This was a source-level experiment, not a full Next.js or
+provider SDK test. Existing AIMock test helpers also cover much of the proposed
+developer experience. See [the evidence and recommendation](docs/validation.md).
+Feature expansion is paused until an integration demonstrates a useful gap.
+
 ## Development and contributions
 
 ```bash

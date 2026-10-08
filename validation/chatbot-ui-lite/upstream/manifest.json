@@ -1,0 +1,36 @@
+{
+  "appCommit": "3cb41ac08c3c9a234e703b3493fe3d8e243133dd",
+  "parserTag": "v0.1.0",
+  "files": [
+    {
+      "path": "utils.ts",
+      "blobSha": "2597151c3951b553716b1aa5500e9159acf028c8",
+      "url": "https://github.com/mckaywrigley/chatbot-ui-lite/blob/main/utils/index.ts"
+    },
+    {
+      "path": "chat.ts",
+      "blobSha": "42cc3a34f51faed01a94d9838c8bd4c4686c8661",
+      "url": "https://github.com/mckaywrigley/chatbot-ui-lite/blob/main/pages/api/chat.ts"
+    },
+    {
+      "path": "types.ts",
+      "blobSha": "e0df43bd1b883402ea8112184ecc219c7b423b8b",
+      "url": "https://github.com/mckaywrigley/chatbot-ui-lite/blob/main/types/index.ts"
+    },
+    {
+      "path": "parser.ts",
+      "blobSha": "2ab42c36057973691c4552118f63b764a298771f",
+      "url": "https://github.com/rexxars/eventsource-parser/blob/v0.1.0/src/parse.ts"
+    },
+    {
+      "path": "CHATBOT_UI_LICENSE",
+      "blobSha": "5421da57e4d7b96c761157d27f9a6f795a591bd5",
+      "url": "https://github.com/mckaywrigley/chatbot-ui-lite/blob/3cb41ac08c3c9a234e703b3493fe3d8e243133dd/license"
+    },
+    {
+      "path": "PARSER_LICENSE",
+      "blobSha": "d0b16a48117af334a46de2f8cb4d82294975689b",
+      "url": "https://github.com/rexxars/eventsource-parser/blob/v0.1.0/LICENSE"
+    }
+  ]
+}

@@ -1,5 +1,10 @@
 # Engineering priorities
 
+Feature expansion is paused following the [external validation](validation.md).
+The tested handler did not demonstrate an advantage over a direct mock, and
+existing AIMock tooling already provides test-runner integration and faults.
+Do not add another test-helper API without demonstrating an unmet need.
+
 The current implementation can inject HTTP faults and compare assertions
 across baseline, disruption, and restoration. The mock app verifies that
 mechanism. It does not establish that the workflow is useful for real clients.
