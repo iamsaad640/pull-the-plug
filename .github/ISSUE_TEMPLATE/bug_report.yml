@@ -1,0 +1,24 @@
+name: Bug report
+description: Report a reproducible failure or incorrect result
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include expected behavior and the observed outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Share a minimal config or mock app. Remove credentials and private URLs.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Node version, OS, commit or version
+    validations:
+      required: true

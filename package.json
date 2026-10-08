@@ -1,0 +1,19 @@
+{
+  "name": "pull-the-plug",
+  "version": "0.1.0",
+  "description": "Test what survives when your application loses a provider.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22" },
+  "bin": { "pull-the-plug": "bin/cli.js" },
+  "repository": { "type": "git", "url": "git+https://github.com/iamsaad640/pull-the-plug.git" },
+  "homepage": "https://github.com/iamsaad640/pull-the-plug#readme",
+  "bugs": { "url": "https://github.com/iamsaad640/pull-the-plug/issues" },
+  "keywords": ["resilience", "fault-injection", "chaos-engineering", "ai", "cli"],
+  "scripts": {
+    "demo": "node bin/cli.js demo",
+    "test": "node --test",
+    "check": "node scripts/check.js"
+  },
+  "license": "MIT"
+}

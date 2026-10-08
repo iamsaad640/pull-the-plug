@@ -1,0 +1,17 @@
+{
+  "name": "Does AI search survive a provider outage?",
+  "proxy": {
+    "upstream": "https://api.openai.com/v1",
+    "port": 8787
+  },
+  "fault": { "type": "unavailable" },
+  "checks": [
+    {
+      "name": "Search returns usable results",
+      "url": "http://127.0.0.1:3000/api/search?q=example",
+      "timeoutMs": 3000,
+      "statuses": [200],
+      "jsonEquals": { "ok": true }
+    }
+  ]
+}

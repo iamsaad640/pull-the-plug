@@ -1,0 +1,16 @@
+name: Integration example
+description: Suggest or share a provider/client integration
+body:
+  - type: input
+    id: client
+    attributes:
+      label: Provider or client library
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Application and experiment
+      description: Describe the endpoint override, fault, useful assertions, and any retry settings.
+    validations:
+      required: true
