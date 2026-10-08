@@ -109,3 +109,20 @@ test('oversized response fails its assertion without persisting the payload', as
     assert.ok(!JSON.stringify(report).includes('private-payload'));
   } finally { await proxy.close(); server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); }
 });
+
+test('JSON object assertions ignore key order but preserve array order and value types', async () => {
+  const server = http.createServer((req, res) => res.end('{"result":{"b":2,"a":1},"items":[1,2],"count":1}'));
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  const proxy = await createProxy({ upstream: `http://127.0.0.1:${server.address().port}` });
+  try {
+    const report = await runExperiment({ name: 'JSON equality', proxy, fault: { type: 'unavailable' }, checks: [
+      { name: 'Object key order', url: proxy.url, jsonEquals: { result: { a: 1, b: 2 } } },
+      { name: 'Array order', url: proxy.url, jsonEquals: { items: [2, 1] } },
+      { name: 'Value type', url: proxy.url, jsonEquals: { count: '1' } }
+    ] });
+    assert.equal(report.workflows[0].baseline.pass, true);
+    assert.equal(report.workflows[0].outcome, 'failed-during-disruption');
+    assert.equal(report.workflows[1].outcome, 'invalid-baseline');
+    assert.equal(report.workflows[2].outcome, 'invalid-baseline');
+  } finally { await proxy.close(); server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); }
+});

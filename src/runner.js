@@ -1,4 +1,5 @@
 import { performance } from 'node:perf_hooks';
+import { isDeepStrictEqual } from 'node:util';
 
 export function validateChecks(checks) {
   if (!Array.isArray(checks) || !checks.length) throw new Error('At least one check is required.');
@@ -58,7 +59,7 @@ async function runCheck(check) {
         const data = JSON.parse(body);
         for (const [path, expected] of Object.entries(check.jsonEquals)) {
           const actual = path.split('.').reduce((value, key) => value?.[key], data);
-          if (JSON.stringify(actual) !== JSON.stringify(expected)) reasons.push(`JSON assertion failed: ${path}`);
+          if (!isDeepStrictEqual(actual, expected)) reasons.push(`JSON assertion failed: ${path}`);
         }
       } catch { reasons.push('Response is not valid JSON'); }
     }

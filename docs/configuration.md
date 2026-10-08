@@ -18,7 +18,8 @@ describe a meaningful success condition in your application:
 }
 ```
 
-`jsonEquals` supports dot-separated property paths and JSON equality.
+`jsonEquals` supports dot-separated property paths and deep equality.
+Object key order is ignored; array order and value types must match.
 Assertions apply identically in baseline, disruption, and recovery phases.
 Each check runs once per phase, sequentially. Response bodies are limited to 1 MiB by default; set `maxResponseBytes` to an integer up to 10 MiB when needed. This release does not measure
 answer quality, retry budgets, recovery time distributions, or load resilience.

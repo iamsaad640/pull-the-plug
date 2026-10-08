@@ -3,7 +3,7 @@
 [![CI](https://github.com/iamsaad640/pull-the-plug/actions/workflows/ci.yml/badge.svg)](https://github.com/iamsaad640/pull-the-plug/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**Your app has a fallback. Have you tested it?**
+**Local HTTP failure tests with before, during, and after assertions.**
 
 Pull the Plug runs your application checks with a provider working, injects a
 failure, restores access, and produces a report showing what survived and what
@@ -117,6 +117,11 @@ Provider-client examples and reproducible integration failures are useful
 first contributions.
 
 ## Related tools
+
+This tool is useful when an application can route a provider client through a
+local endpoint and you want to repeat the same checks during failure and after
+restoration. The mock demo verifies the runner's behavior; it does not validate
+a real SDK's retries, streaming, or fallback implementation.
 
 [Toxiproxy](https://github.com/Shopify/toxiproxy) simulates network conditions.
 [Chaos Mesh](https://github.com/chaos-mesh/chaos-mesh) provides Kubernetes chaos
